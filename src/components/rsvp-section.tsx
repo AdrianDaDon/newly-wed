@@ -92,16 +92,20 @@ export function RsvpSection() {
           <p className="mt-4 text-sm text-pretty text-primary-foreground/80 sm:mt-6 sm:text-base lg:text-lg">
             {rsvp.message}
           </p>
-          <p className="mt-4 text-sm font-medium text-primary-foreground/65 italic sm:mt-5">
-            Kindly reply by {rsvp.deadline}
-          </p>
+
           <ul className="mt-6 space-y-3 sm:mt-8">
             {rsvp.notices.map((notice) => (
               <li
-                key={notice}
-                className="rounded-2xl bg-secondary px-4 py-3.5 text-left text-sm font-semibold text-pretty text-secondary-foreground shadow-sm ring-1 ring-secondary-foreground/10 sm:px-5 sm:py-4 sm:text-base"
+                key={notice.text}
+                className={cn(
+                  "rounded-2xl bg-secondary px-4 py-3.5 text-left text-sm font-semibold text-pretty shadow-sm ring-1 sm:px-5 sm:py-4 sm:text-base",
+                  notice.accent === "red"
+                    ? "text-red-600 ring-red-600/25"
+                    : "text-secondary-foreground ring-secondary-foreground/10",
+                  notice.uppercase && "uppercase tracking-wide",
+                )}
               >
-                {notice}
+                {notice.text}
               </li>
             ))}
           </ul>

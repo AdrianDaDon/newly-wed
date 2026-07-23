@@ -1,7 +1,7 @@
 export const weddingConfig = {
   siteName: "Newly Wed",
   couple: {
-    groom: "Johnathan",
+    groom: "Jonathan",
     bride: "Filly",
   },
   /** ISO datetime used by the countdown timer */
@@ -36,8 +36,8 @@ export const weddingConfig = {
     description: "Dinner, dancing & celebration",
   },
   dressCode: {
-    eyebrow: "Attire",
-    title: "Dress with intention",
+    eyebrow: "Wedding Quest",
+    title: "Colour Dress Code",
     formal: "Formal / Black-tie optional",
     description:
       "We invite you to dress in warm, earthy tones to match our celebration.",
@@ -47,6 +47,20 @@ export const weddingConfig = {
       { name: "Brick", hex: "#944244" },
       { name: "Maroon", hex: "#521A19" },
     ],
+    giftInformation: {
+      title: "Gift information",
+      titleFr: "Informations sur les cadeaux",
+      messages: [
+        {
+          lang: "en",
+          text: "We kindly ask for no boxed gifts; a monetary gift (cash) would be deeply appreciated.",
+        },
+        {
+          lang: "fr",
+          text: "Nous vous prions de ne pas offrir de cadeaux matériels ; un cadeau en espèces serait très apprécié.",
+        },
+      ],
+    },
   },
   rsvp: {
     eyebrow: "Reply",
@@ -60,8 +74,11 @@ export const weddingConfig = {
     successMessage:
       "Your reply is on its way. We can't wait to celebrate with you.",
     notices: [
-      "No kids allowed and partners only by invite",
-      "Cash gifts only",
+      {
+        text: "No kids allowed and partners only by invite",
+        uppercase: false,
+        accent: null,
+      },
     ],
     fields: {
       name: {

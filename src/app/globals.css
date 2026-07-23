@@ -301,6 +301,12 @@
   animation-range: entry 0% entry 40%;
 }
 
+.dress-gifts {
+  animation: details-rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-timeline: view();
+  animation-range: entry 10% entry 50%;
+}
+
 .dress-swatch {
   animation: dress-swatch-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-timeline: view();
@@ -355,6 +361,7 @@
   .details-dot,
   .dress-intro,
   .dress-swatch,
+  .dress-gifts,
   .rsvp-intro,
   .rsvp-form {
     animation: none;
