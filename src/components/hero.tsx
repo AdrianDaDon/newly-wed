@@ -5,12 +5,8 @@ import { useLottie } from "lottie-react";
 import { Menu, X } from "lucide-react";
 
 import ringsAnimation from "@/assets/rings.json";
-
-const navigation = [
-  { name: "Home", href: "#home" },
-  { name: "Details", href: "#details" },
-  { name: "Dress Code", href: "#dress-code" },
-];
+import { weddingConfig } from "@/config/wedding";
+import { CountdownTimer } from "@/components/countdown-timer";
 
 function RingsLottie() {
   const { View } = useLottie<"canvas">(
@@ -36,6 +32,7 @@ function RingsLottie() {
 
 export function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const { couple, navigation, siteName } = weddingConfig;
 
   return (
     <div className="relative bg-background">
@@ -50,8 +47,8 @@ export function Hero() {
               href="#home"
               className="-m-1.5 p-1.5 text-lg font-semibold tracking-tight text-foreground"
             >
-              <span className="sr-only">Newly Wed</span>
-              Newly Wed
+              <span className="sr-only">{siteName}</span>
+              {siteName}
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -99,8 +96,8 @@ export function Hero() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="-m-1.5 p-1.5 text-lg font-semibold tracking-tight text-foreground"
                 >
-                  <span className="sr-only">Newly Wed</span>
-                  Newly Wed
+                  <span className="sr-only">{siteName}</span>
+                  {siteName}
                 </a>
                 <button
                   type="button"
@@ -144,7 +141,7 @@ export function Hero() {
       {/* Home */}
       <section
         id="home"
-        className="relative isolate flex h-screen items-center justify-center px-6 lg:px-8"
+        className="relative isolate flex min-h-screen items-center justify-center px-6 pt-28 pb-16 lg:px-8"
       >
         <div
           aria-hidden="true"
@@ -158,20 +155,22 @@ export function Hero() {
             className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-30 bg-gradient-to-tr from-[#D19188] to-[#944244] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           />
         </div>
-        <div className="mx-auto max-w-2xl text-center">
-          <div className="mx-auto -mt-6 aspect-square w-[min(100%,12rem)] overflow-visible sm:w-[12rem]">
+        <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
+          <div className="aspect-square w-[min(100%,10rem)] overflow-visible sm:w-[11rem]">
             <RingsLottie />
           </div>
-          <h1 className="mt-2 text-5xl font-semibold tracking-tight text-balance text-foreground sm:text-7xl">
-            <span className="name-groom inline-block">Johnathan</span>{" "}
+          <h1 className="mt-8 text-5xl font-semibold tracking-tight text-balance text-foreground sm:mt-10 sm:text-7xl">
+            <span className="name-groom inline-block">{couple.groom}</span>{" "}
             <span className="name-amp text-primary">&amp;</span>{" "}
-            <span className="name-bride inline-block">Filly</span>
+            <span className="name-bride inline-block">{couple.bride}</span>
           </h1>
-          <p className="mt-8 text-lg font-medium text-pretty text-muted-foreground sm:text-xl/8">
-            Join us to celebrate our love — Saturday, September 12th, 2026 at
-            The Garden Estate.
+          <p className="mt-6 max-w-xl text-lg font-medium text-pretty text-muted-foreground sm:mt-8 sm:text-xl/8">
+            {weddingConfig.tagline}
           </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
+          <div className="mt-10 sm:mt-12">
+            <CountdownTimer targetDate={weddingConfig.date} />
+          </div>
+          <div className="mt-10 flex items-center justify-center gap-x-6 sm:mt-12">
             <a
               href="#rsvp"
               className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-primary-foreground shadow-xs hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
@@ -218,9 +217,10 @@ export function Hero() {
                 Ceremony
               </h3>
               <p className="mt-2 text-muted-foreground">
-                3:00 PM · The Garden Estate
+                {weddingConfig.ceremony.time} ·{" "}
+                {weddingConfig.ceremony.location}
                 <br />
-                1234 Rosewood Lane, Napa Valley
+                {weddingConfig.ceremony.address}
               </p>
             </div>
             <div className="rounded-2xl bg-background/60 p-8 text-left">
@@ -228,9 +228,10 @@ export function Hero() {
                 Reception
               </h3>
               <p className="mt-2 text-muted-foreground">
-                5:00 PM · The Vineyard Hall
+                {weddingConfig.reception.time} ·{" "}
+                {weddingConfig.reception.location}
                 <br />
-                Dinner, dancing &amp; celebration
+                {weddingConfig.reception.description}
               </p>
             </div>
           </div>
@@ -247,11 +248,10 @@ export function Hero() {
             Dress Code
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Formal / Black-tie optional. We invite you to dress in warm, earthy
-            tones to match our celebration.
+            {weddingConfig.dressCode.description}
           </p>
           <div className="mt-12 flex items-center justify-center gap-4">
-            {["#E9C9B0", "#D19188", "#944244", "#521A19"].map((hex) => (
+            {weddingConfig.dressCode.colors.map((hex) => (
               <div key={hex} className="flex flex-col items-center gap-2">
                 <div
                   className="size-16 rounded-full ring-1 ring-border"
@@ -274,12 +274,11 @@ export function Hero() {
             RSVP
           </h2>
           <p className="mt-6 text-lg text-primary-foreground/80">
-            Kindly respond by August 1st, 2026. We can't wait to celebrate with
-            you.
+            {weddingConfig.rsvp.message}
           </p>
           <div className="mt-10">
             <a
-              href="mailto:rsvp@newlywed.example"
+              href={`mailto:${weddingConfig.rsvp.email}`}
               className="rounded-md bg-background px-5 py-3 text-sm font-semibold text-foreground shadow-xs hover:bg-background/90"
             >
               Respond now
