@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import ringsAnimation from "@/assets/rings.json";
 import { weddingConfig } from "@/config/wedding";
 import { CountdownTimer } from "@/components/countdown-timer";
+import { DetailsSection } from "@/components/details-section";
 
 function RingsLottie() {
   const { View } = useLottie<"canvas">(
@@ -37,15 +38,15 @@ export function Hero() {
   return (
     <div className="relative bg-background">
       {/* Floating navigation */}
-      <header className="fixed inset-x-0 top-4 z-50 px-4">
+      <header className="fixed inset-x-0 top-3 z-50 px-3 sm:top-4 sm:px-4">
         <nav
           aria-label="Global"
-          className="mx-auto flex max-w-5xl items-center justify-between gap-4 rounded-full border border-border bg-background/70 px-6 py-3 shadow-lg backdrop-blur-md lg:px-8"
+          className="mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-full border border-border bg-background/70 px-4 py-2.5 shadow-lg backdrop-blur-md sm:gap-4 sm:px-6 sm:py-3 lg:px-8"
         >
-          <div className="flex lg:flex-1">
+          <div className="flex min-w-0 lg:flex-1">
             <a
               href="#home"
-              className="-m-1.5 p-1.5 text-lg font-semibold tracking-tight text-foreground"
+              className="-m-1.5 truncate p-1.5 text-base font-semibold tracking-tight text-foreground sm:text-lg"
             >
               <span className="sr-only">{siteName}</span>
               {siteName}
@@ -55,7 +56,7 @@ export function Hero() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-foreground"
+              className="inline-flex size-11 items-center justify-center rounded-md text-foreground"
             >
               <span className="sr-only">Open main menu</span>
               <Menu aria-hidden="true" className="size-6" />
@@ -89,12 +90,12 @@ export function Hero() {
               className="fixed inset-0 z-50 bg-foreground/20 backdrop-blur-sm"
               onClick={() => setMobileMenuOpen(false)}
             />
-            <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background p-6 sm:max-w-sm sm:ring-1 sm:ring-border">
-              <div className="flex items-center justify-between">
+            <div className="fixed inset-y-0 right-0 z-50 w-full max-w-full overflow-y-auto bg-background p-6 sm:max-w-sm sm:ring-1 sm:ring-border">
+              <div className="flex items-center justify-between gap-4">
                 <a
                   href="#home"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="-m-1.5 p-1.5 text-lg font-semibold tracking-tight text-foreground"
+                  className="-m-1.5 truncate p-1.5 text-lg font-semibold tracking-tight text-foreground"
                 >
                   <span className="sr-only">{siteName}</span>
                   {siteName}
@@ -102,7 +103,7 @@ export function Hero() {
                 <button
                   type="button"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="-m-2.5 rounded-md p-2.5 text-foreground"
+                  className="inline-flex size-11 shrink-0 items-center justify-center rounded-md text-foreground"
                 >
                   <span className="sr-only">Close menu</span>
                   <X aria-hidden="true" className="size-6" />
@@ -110,13 +111,13 @@ export function Hero() {
               </div>
               <div className="mt-6 flow-root">
                 <div className="-my-6 divide-y divide-border">
-                  <div className="space-y-2 py-6">
+                  <div className="space-y-1 py-6">
                     {navigation.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-foreground hover:bg-muted"
+                        className="-mx-3 block rounded-lg px-3 py-3 text-base/7 font-semibold text-foreground hover:bg-muted"
                       >
                         {item.name}
                       </a>
@@ -126,7 +127,7 @@ export function Hero() {
                     <a
                       href="#rsvp"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-foreground hover:bg-muted"
+                      className="-mx-3 block rounded-lg px-3 py-3 text-base/7 font-semibold text-foreground hover:bg-muted"
                     >
                       RSVP
                     </a>
@@ -141,7 +142,7 @@ export function Hero() {
       {/* Home */}
       <section
         id="home"
-        className="relative isolate flex min-h-screen items-center justify-center px-6 pt-28 pb-16 lg:px-8"
+        className="snap-section relative isolate flex min-h-dvh items-center justify-center px-4 pt-24 pb-16 sm:px-6 sm:pt-28 lg:px-8"
       >
         <div
           aria-hidden="true"
@@ -155,31 +156,31 @@ export function Hero() {
             className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-30 bg-gradient-to-tr from-[#D19188] to-[#944244] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           />
         </div>
-        <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
-          <div className="aspect-square w-[min(100%,10rem)] overflow-visible sm:w-[11rem]">
+        <div className="mx-auto flex w-full max-w-2xl min-w-0 flex-col items-center text-center">
+          <div className="aspect-square w-[min(100%,8.5rem)] overflow-visible sm:w-[11rem]">
             <RingsLottie />
           </div>
-          <h1 className="mt-8 text-5xl font-semibold tracking-tight text-balance text-foreground sm:mt-10 sm:text-7xl">
+          <h1 className="mt-6 w-full text-4xl font-semibold tracking-tight text-balance break-words text-foreground sm:mt-10 sm:text-7xl">
             <span className="name-groom inline-block">{couple.groom}</span>{" "}
             <span className="name-amp text-primary">&amp;</span>{" "}
             <span className="name-bride inline-block">{couple.bride}</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg font-medium text-pretty text-muted-foreground sm:mt-8 sm:text-xl/8">
+          <p className="mt-5 max-w-xl px-1 text-base font-medium text-pretty text-muted-foreground italic sm:mt-8 sm:text-xl/8">
             {weddingConfig.tagline}
           </p>
-          <div className="mt-10 sm:mt-12">
+          <div className="mt-8 w-full sm:mt-12">
             <CountdownTimer targetDate={weddingConfig.date} />
           </div>
-          <div className="mt-10 flex items-center justify-center gap-x-6 sm:mt-12">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 sm:mt-12">
             <a
               href="#rsvp"
-              className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-primary-foreground shadow-xs hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              className="inline-flex min-h-11 items-center rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-xs hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
               RSVP
             </a>
             <a
               href="#details"
-              className="text-sm/6 font-semibold text-foreground hover:text-primary"
+              className="inline-flex min-h-11 items-center text-sm/6 font-semibold text-foreground hover:text-primary"
             >
               View details <span aria-hidden="true">→</span>
             </a>
@@ -199,65 +200,30 @@ export function Hero() {
         </div>
       </section>
 
-      {/* Details */}
-      <section
-        id="details"
-        className="flex h-screen scroll-mt-20 items-center justify-center bg-secondary px-6 lg:px-8"
-      >
-        <div className="mx-auto max-w-2xl text-center text-secondary-foreground">
-          <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            Details
-          </h2>
-          <p className="mt-4 text-lg text-secondary-foreground/80">
-            Everything you need to know about the day.
-          </p>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2">
-            <div className="rounded-2xl bg-background/60 p-8 text-left">
-              <h3 className="text-xl font-semibold text-foreground">
-                Ceremony
-              </h3>
-              <p className="mt-2 text-muted-foreground">
-                {weddingConfig.ceremony.time} ·{" "}
-                {weddingConfig.ceremony.location}
-                <br />
-                {weddingConfig.ceremony.address}
-              </p>
-            </div>
-            <div className="rounded-2xl bg-background/60 p-8 text-left">
-              <h3 className="text-xl font-semibold text-foreground">
-                Reception
-              </h3>
-              <p className="mt-2 text-muted-foreground">
-                {weddingConfig.reception.time} ·{" "}
-                {weddingConfig.reception.location}
-                <br />
-                {weddingConfig.reception.description}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <DetailsSection />
 
       {/* Dress Code */}
       <section
         id="dress-code"
-        className="flex h-screen scroll-mt-20 items-center justify-center px-6 lg:px-8"
+        className="snap-section flex min-h-dvh scroll-mt-20 items-center justify-center px-4 py-20 sm:px-6 lg:px-8"
       >
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+        <div className="mx-auto w-full max-w-2xl min-w-0 text-center">
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-5xl">
             Dress Code
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground">
+          <p className="mt-4 text-base text-pretty text-muted-foreground sm:mt-6 sm:text-lg">
             {weddingConfig.dressCode.description}
           </p>
-          <div className="mt-12 flex items-center justify-center gap-4">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:mt-12 sm:gap-4">
             {weddingConfig.dressCode.colors.map((hex) => (
               <div key={hex} className="flex flex-col items-center gap-2">
                 <div
-                  className="size-16 rounded-full ring-1 ring-border"
+                  className="size-12 rounded-full ring-1 ring-border sm:size-16"
                   style={{ backgroundColor: hex }}
                 />
-                <span className="text-xs text-muted-foreground">{hex}</span>
+                <span className="text-[0.65rem] text-muted-foreground sm:text-xs">
+                  {hex}
+                </span>
               </div>
             ))}
           </div>
@@ -267,19 +233,19 @@ export function Hero() {
       {/* RSVP */}
       <section
         id="rsvp"
-        className="flex h-screen scroll-mt-20 items-center justify-center bg-primary px-6 lg:px-8"
+        className="snap-section flex min-h-dvh scroll-mt-20 items-center justify-center bg-primary px-4 py-20 sm:px-6 lg:px-8"
       >
-        <div className="mx-auto max-w-2xl text-center text-primary-foreground">
-          <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+        <div className="mx-auto w-full max-w-2xl min-w-0 text-center text-primary-foreground">
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl">
             RSVP
           </h2>
-          <p className="mt-6 text-lg text-primary-foreground/80">
+          <p className="mt-4 text-base text-pretty text-primary-foreground/80 sm:mt-6 sm:text-lg">
             {weddingConfig.rsvp.message}
           </p>
-          <div className="mt-10">
+          <div className="mt-8 sm:mt-10">
             <a
               href={`mailto:${weddingConfig.rsvp.email}`}
-              className="rounded-md bg-background px-5 py-3 text-sm font-semibold text-foreground shadow-xs hover:bg-background/90"
+              className="inline-flex min-h-11 items-center justify-center rounded-md bg-background px-5 py-3 text-sm font-semibold text-foreground shadow-xs hover:bg-background/90"
             >
               Respond now
             </a>

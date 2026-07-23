@@ -5,22 +5,34 @@ export const weddingConfig = {
     bride: "Filly",
   },
   /** ISO datetime used by the countdown timer */
-  date: "2026-09-12T15:00:00",
+  date: "2026-09-12T12:00:00",
   displayDate: "Saturday, September 12th, 2026",
   venue: {
-    name: "The Garden Estate",
-    address: "1234 Rosewood Lane, Napa Valley",
+    name: "Alberton Civic Centre",
+    address: "Alwyn Taljaard Ave, Alberton, Johannesburg",
+    /** Coords for the embedded map */
+    lat: -26.264588989829896,
+    lng: 28.123540380615683,
   },
   tagline:
-    "Join us to celebrate our love — Saturday, September 12th, 2026 at The Garden Estate.",
+    "\"Two are better than one... A cord of three strands is not quickly broken.\" – Ecclesiastes 4:9-12",
+  details: {
+    eyebrow: "The day",
+    title: "When & where",
+    description:
+      "A ceremony followed by dinner, dancing, and celebration as the evening unfolds.",
+    directionsLabel: "Get directions",
+  },
   ceremony: {
-    time: "3:00 PM",
-    location: "The Garden Estate",
-    address: "1234 Rosewood Lane, Napa Valley",
+    label: "Blessings",
+    time: "12:00 PM",
+    location: "Alberton Civic Centre",
+    address: "Alwyn Taljaard Ave, Alberton, Johannesburg",
   },
   reception: {
+    label: "Reception",
     time: "5:00 PM",
-    location: "The Vineyard Hall",
+    location: "Alberton Civic Centre",
     description: "Dinner, dancing & celebration",
   },
   dressCode: {

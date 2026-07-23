@@ -70,20 +70,20 @@ export function CountdownTimer({ targetDate }: CountdownTimerProps) {
   const formatNumber = (num: number) => num.toString().padStart(2, "0");
 
   const TimeDisplay = ({ value, label }: { value: number; label: string }) => (
-    <div className="text-center">
-      <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-lg border border-border bg-background/80 shadow-sm backdrop-blur-sm md:h-20 md:w-20">
-        <span className="text-2xl font-bold text-foreground md:text-4xl">
+    <div className="min-w-0 text-center">
+      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg border border-border bg-background/80 shadow-sm backdrop-blur-sm sm:h-16 sm:w-16 md:h-20 md:w-20">
+        <span className="text-lg font-bold text-foreground sm:text-2xl md:text-4xl">
           {formatNumber(value)}
         </span>
       </div>
-      <div className="mt-2 text-sm font-medium text-muted-foreground md:text-base">
+      <div className="mt-1.5 text-[0.65rem] font-medium text-muted-foreground sm:mt-2 sm:text-sm md:text-base">
         {label}
       </div>
     </div>
   );
 
   return (
-    <div className="flex items-center justify-center gap-3 md:gap-6">
+    <div className="flex w-full max-w-full items-center justify-center gap-2 sm:gap-3 md:gap-6">
       <TimeDisplay value={timeLeft.days} label="Days" />
       <TimeDisplay value={timeLeft.hours} label="Hours" />
       <TimeDisplay value={timeLeft.minutes} label="Minutes" />
