@@ -135,3 +135,58 @@
     @apply font-sans;
   }
 }
+
+@keyframes name-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes name-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes name-join {
+  0%,
+  60% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.name-groom {
+  animation: name-in-left 1.5s cubic-bezier(0.22, 1, 0.36, 1) 3.2s both;
+}
+
+.name-bride {
+  animation: name-in-right 1.5s cubic-bezier(0.22, 1, 0.36, 1) 3.2s both;
+}
+
+.name-amp {
+  display: inline-block;
+  animation: name-join 1.8s ease-out 3.2s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .name-groom,
+  .name-bride,
+  .name-amp {
+    animation: none;
+  }
+}
