@@ -32,7 +32,7 @@ export function DetailsSection() {
   return (
     <section
       id="details"
-      className="snap-section relative isolate flex min-h-dvh scroll-mt-20 items-center overflow-x-hidden bg-secondary"
+      className="snap-section relative isolate flex scroll-mt-20 items-center overflow-x-hidden bg-secondary"
     >
       {/* Soft atmospheric wash */}
       <div
@@ -130,7 +130,7 @@ export function DetailsSection() {
         </div>
 
         {/* Map plane — full-bleed on large screens, contained on mobile */}
-        <div className="details-map relative w-full min-w-0 px-4 pb-16 sm:px-6 sm:pb-20 lg:min-h-dvh lg:px-0 lg:pb-0">
+        <div className="details-map relative w-full min-w-0 px-4 pb-16 sm:px-6 sm:pb-20 lg:min-h-[100vh] lg:px-0 lg:pb-0">
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-[0_24px_60px_-28px_rgba(82,26,25,0.45)] ring-1 ring-secondary-foreground/10 sm:aspect-[5/4] lg:absolute lg:inset-0 lg:aspect-auto lg:h-full lg:rounded-none lg:shadow-none lg:ring-0">
             <iframe
               title={`Map showing ${venue.name}`}

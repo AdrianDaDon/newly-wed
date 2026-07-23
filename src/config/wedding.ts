@@ -36,15 +36,59 @@ export const weddingConfig = {
     description: "Dinner, dancing & celebration",
   },
   dressCode: {
+    eyebrow: "Attire",
+    title: "Dress with intention",
+    formal: "Formal / Black-tie optional",
     description:
-      "Formal / Black-tie optional. We invite you to dress in warm, earthy tones to match our celebration.",
-    colors: ["#E9C9B0", "#D19188", "#944244", "#521A19"],
+      "We invite you to dress in warm, earthy tones to match our celebration.",
+    palette: [
+      { name: "Cream", hex: "#E9C9B0" },
+      { name: "Rose", hex: "#D19188" },
+      { name: "Brick", hex: "#944244" },
+      { name: "Maroon", hex: "#521A19" },
+    ],
   },
   rsvp: {
+    eyebrow: "Reply",
+    title: "Will you join us?",
     deadline: "August 1st, 2026",
     email: "rsvp@newlywed.example",
     message:
       "Kindly respond by August 1st, 2026. We can't wait to celebrate with you.",
+    submitLabel: "Send RSVP",
+    successTitle: "Thank you",
+    successMessage:
+      "Your reply is on its way. We can't wait to celebrate with you.",
+    notices: [
+      "No kids allowed and partners only by invite",
+      "Cash gifts only",
+    ],
+    fields: {
+      name: {
+        label: "Full name",
+        placeholder: "Your full name",
+      },
+      email: {
+        label: "Email",
+        placeholder: "you@example.com",
+      },
+      phone: {
+        label: "Phone number",
+        placeholder: "+27 00 000 0000",
+      },
+      attendance: {
+        label: "Will you be attending?",
+        placeholder: "Select an option",
+        options: [
+          { value: "yes", label: "Yes, I will attend" },
+          { value: "no", label: "No, I cannot attend" },
+        ],
+      },
+      message: {
+        label: "Message for the couple",
+        placeholder: "Share a note with the couple",
+      },
+    },
   },
   navigation: [
     { name: "Home", href: "#home" },

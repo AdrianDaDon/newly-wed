@@ -8,6 +8,8 @@ import ringsAnimation from "@/assets/rings.json";
 import { weddingConfig } from "@/config/wedding";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { DetailsSection } from "@/components/details-section";
+import { DressCodeSection } from "@/components/dress-code-section";
+import { RsvpSection } from "@/components/rsvp-section";
 
 function RingsLottie() {
   const { View } = useLottie<"canvas">(
@@ -142,7 +144,7 @@ export function Hero() {
       {/* Home */}
       <section
         id="home"
-        className="snap-section relative isolate flex min-h-dvh items-center justify-center px-4 pt-24 pb-16 sm:px-6 sm:pt-28 lg:px-8"
+        className="snap-section relative isolate flex items-center justify-center px-4 pt-24 pb-16 sm:px-6 sm:pt-28 lg:px-8"
       >
         <div
           aria-hidden="true"
@@ -202,56 +204,9 @@ export function Hero() {
 
       <DetailsSection />
 
-      {/* Dress Code */}
-      <section
-        id="dress-code"
-        className="snap-section flex min-h-dvh scroll-mt-20 items-center justify-center px-4 py-20 sm:px-6 lg:px-8"
-      >
-        <div className="mx-auto w-full max-w-2xl min-w-0 text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-5xl">
-            Dress Code
-          </h2>
-          <p className="mt-4 text-base text-pretty text-muted-foreground sm:mt-6 sm:text-lg">
-            {weddingConfig.dressCode.description}
-          </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:mt-12 sm:gap-4">
-            {weddingConfig.dressCode.colors.map((hex) => (
-              <div key={hex} className="flex flex-col items-center gap-2">
-                <div
-                  className="size-12 rounded-full ring-1 ring-border sm:size-16"
-                  style={{ backgroundColor: hex }}
-                />
-                <span className="text-[0.65rem] text-muted-foreground sm:text-xs">
-                  {hex}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <DressCodeSection />
 
-      {/* RSVP */}
-      <section
-        id="rsvp"
-        className="snap-section flex min-h-dvh scroll-mt-20 items-center justify-center bg-primary px-4 py-20 sm:px-6 lg:px-8"
-      >
-        <div className="mx-auto w-full max-w-2xl min-w-0 text-center text-primary-foreground">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl">
-            RSVP
-          </h2>
-          <p className="mt-4 text-base text-pretty text-primary-foreground/80 sm:mt-6 sm:text-lg">
-            {weddingConfig.rsvp.message}
-          </p>
-          <div className="mt-8 sm:mt-10">
-            <a
-              href={`mailto:${weddingConfig.rsvp.email}`}
-              className="inline-flex min-h-11 items-center justify-center rounded-md bg-background px-5 py-3 text-sm font-semibold text-foreground shadow-xs hover:bg-background/90"
-            >
-              Respond now
-            </a>
-          </div>
-        </div>
-      </section>
+      <RsvpSection />
     </div>
   );
 }
