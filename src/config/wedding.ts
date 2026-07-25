@@ -68,7 +68,7 @@ export const weddingConfig = {
     deadline: "August 1st, 2026",
     email: "rsvp@newlywed.example",
     message:
-      "Kindly respond by August 1st, 2026. We can't wait to celebrate with you.",
+      "Kindly respond by August 15th, 2026. We can't wait to celebrate with you.",
     submitLabel: "Send RSVP",
     successTitle: "Thank you",
     successMessage:
@@ -77,10 +77,22 @@ export const weddingConfig = {
       {
         text: "No kids allowed and partners only by invite",
         uppercase: false,
-        accent: null,
+        accent: "red",
       },
     ],
     fields: {
+      party: {
+        label: "Attending as",
+        placeholder: "Select an option",
+        options: [
+          { value: "single", label: "Single" },
+          { value: "couple", label: "Couple" },
+        ],
+      },
+      partnerName: {
+        label: "Partner's name",
+        placeholder: "Your partner's full name",
+      },
       name: {
         label: "Full name",
         placeholder: "Your full name",
@@ -105,6 +117,15 @@ export const weddingConfig = {
         label: "Message for the couple",
         placeholder: "Share a note with the couple",
       },
+    },
+  },
+  footer: {
+    eyebrow: "More information",
+    contact: {
+      name: "Vee",
+      phone: "074 439 5950",
+      /** E.164 for tel: links */
+      phoneHref: "+27744395950",
     },
   },
   navigation: [

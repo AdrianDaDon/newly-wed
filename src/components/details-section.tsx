@@ -48,7 +48,7 @@ export function DetailsSection() {
               <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-primary uppercase sm:text-xs sm:tracking-[0.28em]">
                 {details.eyebrow}
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-balance text-secondary-foreground sm:text-5xl lg:text-6xl">
+              <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-balance text-secondary-foreground sm:text-5xl lg:text-6xl">
                 {details.title}
               </h2>
               <p className="mt-3 text-sm text-pretty text-secondary-foreground/75 sm:mt-4 sm:text-base sm:text-lg">
