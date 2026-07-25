@@ -158,7 +158,7 @@ export function HeroAlternate() {
           <div className="aspect-square w-[min(100%,8.5rem)] overflow-visible sm:w-[11rem]">
             <RingsLottie />
           </div>
-          <h1 className="mt-6 w-full font-heading text-4xl font-semibold tracking-tight text-balance break-words text-foreground sm:mt-10 sm:text-7xl">
+          <h1 className="mt-6 w-full  text-4xl font-semibold tracking-tight text-balance break-words text-foreground sm:mt-10 sm:text-7xl">
             <span className="name-groom inline-block">{couple.groom}</span>{" "}
             <span className="name-amp text-primary">&amp;</span>{" "}
             <span className="name-bride inline-block">{couple.bride}</span>

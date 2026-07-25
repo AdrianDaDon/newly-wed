@@ -154,7 +154,7 @@ export function RsvpSection() {
             <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-primary-foreground/70 uppercase sm:text-xs sm:tracking-[0.28em]">
               {rsvp.eyebrow}
             </p>
-            <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-balance break-words sm:text-5xl lg:text-6xl">
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-balance break-words sm:text-5xl lg:text-6xl">
               {rsvp.title}
             </h2>
             <p className="mt-4 text-sm text-pretty text-primary-foreground/80 sm:mt-6 sm:text-base lg:text-lg">

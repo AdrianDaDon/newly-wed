@@ -30,7 +30,7 @@ export function DressCodeSection() {
             <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-primary uppercase sm:text-xs sm:tracking-[0.28em]">
               {dressCode.eyebrow}
             </p>
-            <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-balance break-words text-foreground sm:text-5xl lg:text-6xl">
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-balance break-words text-foreground sm:text-5xl lg:text-6xl">
               {dressCode.title}
             </h2>
             <p className="mt-4 text-sm font-medium tracking-wide text-pretty text-primary italic sm:mt-6 sm:text-lg">

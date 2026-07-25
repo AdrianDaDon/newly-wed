@@ -35,9 +35,7 @@ export function SiteFooter() {
           href={`tel:${footer.contact.phoneHref}`}
           className="group inline-flex min-h-10 items-center gap-2 rounded-full border border-accent/35 bg-accent/10 px-4 py-2 text-sm font-medium tracking-wide text-primary-foreground transition-colors hover:border-accent/60 hover:bg-accent/20"
         >
-          <span className="font-heading text-base leading-none">
-            {footer.contact.name}
-          </span>
+          <span className="text-base leading-none">{footer.contact.name}</span>
           <span className="text-accent/50" aria-hidden="true">
             ·
           </span>
