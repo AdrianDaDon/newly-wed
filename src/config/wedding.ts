@@ -15,7 +15,7 @@ export const weddingConfig = {
     lng: 28.123540380615683,
   },
   tagline:
-    "\"Two are better than one... A cord of three strands is not quickly broken.\" – Ecclesiastes 4:9-12",
+    '"Two are better than one... A cord of three strands is not quickly broken." – Ecclesiastes 4:9-12',
   details: {
     eyebrow: "The day",
     title: "When & where",
@@ -40,12 +40,11 @@ export const weddingConfig = {
     title: "Colour Dress Code",
     formal: "Formal / Black-tie optional",
     description:
-      "We invite you to dress in warm, earthy tones to match our celebration.",
+      "Strictly follow the colour palate for the benediction ceremony",
     palette: [
       { name: "Cream", hex: "#E9C9B0" },
       { name: "Rose", hex: "#D19188" },
       { name: "Brick", hex: "#944244" },
-      { name: "Maroon", hex: "#521A19" },
     ],
     giftInformation: {
       title: "Gift information",
