@@ -112,6 +112,7 @@ export function RsvpSection() {
         {
           fullname: form.partnerName.trim() || form.name.trim(),
           attendingAs: form.party,
+          attendance: form.attendance,
           email: form.email.trim(),
           phoneNumber: form.phone.trim(),
           message: form.message.trim(),
